@@ -5,6 +5,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.JoinColumn;
 
 
 @Entity
@@ -21,6 +23,11 @@ public class Client {
 
     @Column(nullable = false)
     private String clientAddress;
+
+    @ManyToOne
+    @JoinColumn(name = "advisorId") // Foreign key column in the 'Client' table
+    private Advisor advisor;
+
 
     protected Client() {}
 
@@ -55,3 +62,6 @@ public class Client {
         this.clientAddress = clientAddress;
     }
 }
+    
+
+    
