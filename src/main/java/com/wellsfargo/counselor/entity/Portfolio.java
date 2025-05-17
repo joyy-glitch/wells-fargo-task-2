@@ -3,7 +3,7 @@ package com.wellsfargo.counselor.entity;
 import jakarta.persistence.*;
 
 @Entity
-public class Portfolio {
+public class Portfolio {  
     @Id
     @GeneratedValue
     private long portfolioId;
